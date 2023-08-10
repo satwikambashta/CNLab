@@ -30,6 +30,7 @@ int main() {
         fgets(sentence, sizeof(sentence), stdin);
         sentence[strlen(sentence) - 1] = '\0';  // Remove newline character
 
+        // Send the sentence to the server
         write(sockfd, sentence, strlen(sentence));
         
         if (strcmp(sentence, "Stop") == 0) {
@@ -37,7 +38,7 @@ int main() {
             break;
         }
 
-        // Receive processed sentence from server
+        // Receive and display processed sentence from server
         n = read(sockfd, received, sizeof(received));
         received[n] = '\0';
         printf("Processed sentence received from server: %s\n", received);
