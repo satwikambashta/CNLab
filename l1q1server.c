@@ -33,7 +33,7 @@ int main()
         char buf[256];
         printf("server waiting");
         //accept a connection
-        clilen = sizeof(clilen);
+        clilen = sizeof(cliaddr);
         newsockfd = accept(sockfd,(struct sockaddr*)&cliaddr,&clilen);
         //read and write to client
         n = read(newsockfd,buf,sizeof(buf));
