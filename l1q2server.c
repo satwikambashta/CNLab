@@ -1,4 +1,24 @@
-int sockfd, newsockfd, clilen, n = 1;
+// here the client accepts a sentence from the user and sends it to the server. The server
+// will check for duplicate words in the string. Server will find number of occurrences of
+// duplicate words present and remove the duplicate words by retaining single occurrence of
+// the word and send the resultant sentence to the client. The client displays the received
+// data on the client screen. The process repeats until the user enter the string “Stop”. Then 
+// boththe processes terminate.
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/socket.h>
+#include <sys/types.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+
+#define PORTNO 10200
+
+
+int main() {
+    int sockfd, newsockfd, clilen, n = 1;
     struct sockaddr_in seraddr, cliaddr;
     int i, value;
 
@@ -62,3 +82,5 @@ int sockfd, newsockfd, clilen, n = 1;
 
     // Close the server socket
     close(sockfd);
+    return 0;
+}
