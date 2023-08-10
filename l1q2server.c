@@ -60,15 +60,17 @@ int main() {
         buf[n] = '\0';
         printf("Received sentence from client: %s\n", buf);
 
+        // Process sentence (remove duplicates) and send response
         if (strcmp(buf, "Stop") == 0) {
             printf("Client requested to stop. Terminating server...\n");
+            write(newsockfd, "Terminating server...", strlen("Terminating server..."));
+            close(newsockfd);
             break;
+        } else {
+            removeDuplicates(buf);
+            printf("Processed sentence: %s\n", buf);
+            n = write(newsockfd, buf, sizeof(buf));
         }
-
-        // Remove duplicate words and send back the modified sentence
-        removeDuplicates(buf);
-        printf("Processed sentence: %s\n", buf);
-        n = write(newsockfd, buf, sizeof(buf));
 
         // Close the new socket
         close(newsockfd);
