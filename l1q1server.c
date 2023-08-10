@@ -1,3 +1,10 @@
+// To illustrate encryption and decryption of messages using TCP. The client accepts
+// messages to be encrypted through standard input device. The client will encrypt the string
+// by adding 4(random value) to ASCII value of each alphabet. The encrypted message is
+// sent to the server. The server then decrypts the message and displays both encrypted and
+// decrypted forms of the string. Program terminates after one session.
+//SERVER
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<unistd.h>
@@ -33,7 +40,7 @@ int main()
         printf("\n encrypted message from client %s \n",buf);
         for(int i=0;i<strlen(buf);i++)
             buf[i] -=4;
-            
+
         printf("\ndecrypted message from client %s\n",buf);
         n = write(newsockfd,buf,sizeof(buf));
     }
