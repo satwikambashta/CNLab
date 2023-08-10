@@ -43,7 +43,8 @@ int main() {
 
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
     seraddr.sin_family = AF_INET;
-    seraddr.sin_addr.s_addr = INADDR_ANY;  // Listen on all available interfaces
+    seraddr.sin_addr.s_addr = inet_addr("172.16.59.34");
+    // seraddr.sin_addr.s_addr = INADDR_ANY;  Listen on all available interfaces
     seraddr.sin_port = htons(PORTNO);
 
     bind(sockfd, (struct sockaddr*)&seraddr, sizeof(seraddr));
