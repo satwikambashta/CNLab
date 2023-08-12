@@ -64,6 +64,7 @@ int main()
             outp=temp;
             write(newsockfd, &outp, sizeof(int));
             close(sockfd); 
+exit(0);
         }
         else{
             close(newsockfd); // Close the socket in the parent process
