@@ -1,4 +1,7 @@
 //concurrent daytimeserver
+//satwik saurav 210905272
+
+
 #include <stdio.h>
 #include <sys/types.h>
 #include <sys/socket.h>
