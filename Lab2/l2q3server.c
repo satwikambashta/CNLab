@@ -3,14 +3,17 @@
 //SATWIK SAURAV(210905272)
 //SERVER
 #include<stdio.h>
+#include <stdlib.h>
 #include<sys/types.h>
 #include<sys/socket.h>
 #include<netinet/in.h>
 #include<unistd.h>
 #include<string.h>
 #include <sys/wait.h>
+#include <arpa/inet.h>
 #include<time.h>
-#define PORTNO 13
+#define PORTNO 10200
+
 
 int main() {
     int sockfd, newsockfd, clilen, n = 1;
@@ -19,9 +22,8 @@ int main() {
     struct sockaddr_in seraddr, cliaddr;
 
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
-
     seraddr.sin_family = AF_INET;
-    seraddr.sin_addr.s_addr = INADDR_ANY;
+    seraddr.sin_addr.s_addr =inet_addr("127.16.59.75");
     seraddr.sin_port = htons(PORTNO);
 
     bind(sockfd, (struct sockaddr *)&seraddr, sizeof(seraddr));
@@ -30,16 +32,20 @@ int main() {
 
     while (1) {
         clilen = sizeof(cliaddr);
-        print("Server waiting \n");
+        printf("Server waiting \n");
 
         newsockfd = accept(sockfd, (struct sockaddr *)&cliaddr, &clilen);
 
-        if (fork() == 0) {
+        if (fork() == 0) 
+        {
+            printf("HERE");
             // Child process: get current time using time_t
             time(&rawtime);
 
             // Convert time_t to string format
+            printf("time is %s",ctime(&rawtime));
             snprintf(buf, sizeof(buf), "%s", asctime(gmtime(&rawtime)));
+            
 
             // Write the time to the client
             write(newsockfd, buf, strlen(buf));

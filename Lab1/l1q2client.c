@@ -24,7 +24,7 @@ int main() {
 
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
     address.sin_family = AF_INET;
-    address.sin_addr.s_addr = inet_addr("127.16.59.75");
+    address.sin_addr.s_addr = inet_addr("172.16.59.75");
     address.sin_port = htons(PORTNO);
     result = connect(sockfd, (struct sockaddr*)&address, sizeof(address));
 
