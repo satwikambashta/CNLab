@@ -52,10 +52,10 @@ int main()
             else if(op=='*'){
                 temp=a*b;
             }
-            else if(op=='/'){
+            else if(op=='-'){
                 temp=a-b;
             }
-            else if(op=='*'){
+            else if(op=='/'){
                 temp=a/b;
             }
             else{
