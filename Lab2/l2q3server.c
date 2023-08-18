@@ -30,6 +30,7 @@ int main() {
 
     while (1) {
         clilen = sizeof(cliaddr);
+        print("Server waiting \n");
 
         newsockfd = accept(sockfd, (struct sockaddr *)&cliaddr, &clilen);
 
