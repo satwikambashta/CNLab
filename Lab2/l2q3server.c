@@ -8,6 +8,7 @@
 #include<netinet/in.h>
 #include<unistd.h>
 #include<string.h>
+#include <sys/wait.h>
 #include<time.h>
 #define PORTNO 13
 
