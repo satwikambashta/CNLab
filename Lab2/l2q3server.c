@@ -1,6 +1,7 @@
 // Write a concurrent TCP daytime server ‘C’ program. Along with the result, server
 //should also send the process id to the client.
-
+//SATWIK SAURAV(210905272)
+//SERVER
 #include<stdio.h>
 #include<sys/types.h>
 #include<sys/socket.h>
