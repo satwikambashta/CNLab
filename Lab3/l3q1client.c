@@ -17,7 +17,7 @@ void main() {
     int sockID = socket(AF_INET, SOCK_DGRAM, 0);
 
     addr.sin_family = AF_INET;
-    addr.sin_addr.s_addr = inet_addr("172.16.59.71"); // replace IP
+    addr.sin_addr.s_addr = inet_addr("172.16.59.33"); // replace IP
     addr.sin_port = htons(PORTNO);
 
     int rows, cols;
