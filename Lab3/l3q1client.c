@@ -1,47 +1,42 @@
 /*Write a UDP client-server program where t he client sends rows of a matrix, and the
 servercombines them together as a matrix*/
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <fcntl.h>
-#include <sys/socket.h>
 #include <sys/types.h>
+#include <sys/socket.h>
+#include <stdio.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
+#include <stdlib.h>
+#include <string.h>
 #include <unistd.h>
+#include <fcntl.h>
 
-int main()
-{
-    int sd;
-    int m,n;
-    struct sockaddr_in address;
-    
-    sd = socket(AF_INET, SOCK_DGRAM, 0);
-    address.sin_family = AF_INET;
-    address.sin_addr.s_addr = inet_addr("172.16.59.75"); 
-    address.sin_port = htons(9704);
-    printf("Enter number of rows ");
-    scanf("%d",&m);
-    // printf("%d",m);
-    printf("Enter number of columns: ");
-    scanf("%d",&n);
-    int len = sizeof(address);
-    sendto(sd, &m, sizeof(m), 0, (struct sockaddr *)&address, len);
-    int arr[n];
-    for(int i=0; i<m; i++)
-    {
-        printf("Enter values of row %d",i);
-        for(int j=0; j<n; j++){
-            scanf("%d",arr[j]);
+#define PORTNO 10200
 
+void main() {
+    struct sockaddr_in addr;
+    int sockID = socket(AF_INET, SOCK_DGRAM, 0);
+
+    addr.sin_family = AF_INET;
+    addr.sin_addr.s_addr = inet_addr("172.16.59.71"); // replace IP
+    addr.sin_port = htons(PORTNO);
+
+    int rows, cols;
+    printf("Enter rows and columns of the matrix ");
+    scanf("%d %d", &rows, &cols);
+
+    int temp[2];
+    temp[0] = rows;
+    temp[1] = cols;
+
+    sendto(sockID, temp, sizeof(temp), 0, (struct sockaddr *)&addr, sizeof(addr));
+
+    int arr[cols]; // Using a static array for columns
+
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            printf("Enter a[%d][%d] ", i, j);
+            scanf("%d", &arr[j]);
         }
-
+        sendto(sockID, arr, cols * sizeof(int), 0, (struct sockaddr *)&addr, sizeof(addr));
     }
-    
-    
-    // int m = sendto(sd, buf, sizeof(buf), 0, (struct sockaddr *)&address, len);
-    // int n = recvfrom(sd, buf, sizeof(buf), 0, (struct sockaddr *)&address, &len);
-    
-    return 0;
 }
