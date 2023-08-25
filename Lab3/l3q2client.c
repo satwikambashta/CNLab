@@ -11,6 +11,26 @@
 #include <unistd.h>
 #include <fcntl.h>
 
+#define PORTNO 8003
+
+int main()
+{
+	int sd;
+	struct sockaddr_in address;
+	sd=socket(AF_INET,SOCK_DGRAM,0);
+	address.sin_family=AF_INET;
+	address.sin_addr.s_addr=inet_addr("172.16.59.33");
+	address.sin_port=htons(PORTNO);
+	char buf[256];
+	int len=sizeof(address);
+	printf("Enter the request: ");
+	scanf("%[^\n]",buf);
+	sendto(sd,buf,sizeof(buf),0,(struct sockaddr *)&address, len);
+
+	return 0;
+}
+
+/*
 #define PORTNO 443 // HTTPS port
 #define HOST "api.github.com"
 #define PATH "/repos/satwikambashta/satwikambashta"
@@ -44,4 +64,4 @@ void main() {
     printf("Received : %s", buf);
 
     close(sockID);
-}
+}*/
