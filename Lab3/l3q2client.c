@@ -1,5 +1,6 @@
 /*to send manually crafted http request to web server */
-//satwiksaurav 210905272
+//satwik saurav 210905272
+
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <stdio.h>
