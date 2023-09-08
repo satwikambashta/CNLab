@@ -1,0 +1,32 @@
+PC1:
+PC1> ip 30.0.0.1 255.0.0.0 30.255.255.254 
+Checking for duplicate address...
+PC1 : 30.0.0.1 255.0.0.0 gateway 30.255.255.254
+
+PC1> show ip
+
+NAME        : PC1[1]
+IP/MASK     : 30.0.0.1/8
+GATEWAY     : 30.255.255.254
+DNS         : 
+MAC         : 00:50:79:66:68:00
+LPORT       : 10048
+RHOST:PORT  : 127.0.0.1:10049
+MTU         : 1500
+
+PC1> ping 30.0.0.2
+
+84 bytes from 30.0.0.2 icmp_seq=1 ttl=64 time=0.336 ms
+84 bytes from 30.0.0.2 icmp_seq=2 ttl=64 time=0.485 ms
+84 bytes from 30.0.0.2 icmp_seq=3 ttl=64 time=0.417 ms
+84 bytes from 30.0.0.2 icmp_seq=4 ttl=64 time=0.336 ms
+84 bytes from 30.0.0.2 icmp_seq=5 ttl=64 time=0.293 ms
+
+PC1> ping 30.255.255.254
+
+30.255.255.254 icmp_seq=1 timeout
+84 bytes from 30.255.255.254 icmp_seq=2 ttl=255 time=1.610 ms
+84 bytes from 30.255.255.254 icmp_seq=3 ttl=255 time=1.678 ms
+84 bytes from 30.255.255.254 icmp_seq=4 ttl=255 time=10.092 ms
+84 bytes from 30.255.255.254 icmp_seq=5 ttl=255 time=10.292 ms
+

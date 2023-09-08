@@ -1,0 +1,23 @@
+VC6> ip 192.168.1.2 255.255.255.0 192.168.1.254
+Checking for duplicate address...
+PC6 : 192.168.1.2 255.255.255.0 gateway 192.168.1.254
+
+PC6> show ip
+
+NAME        : PC6[1]
+IP/MASK     : 192.168.1.2/24
+GATEWAY     : 192.168.1.254
+DNS         : 
+MAC         : 00:50:79:66:68:05
+LPORT       : 10058
+RHOST:PORT  : 127.0.0.1:10059
+MTU         : 1500
+
+PC6> ping 192.168.1.1
+
+84 bytes from 192.168.1.1 icmp_seq=1 ttl=64 time=0.473 ms
+84 bytes from 192.168.1.1 icmp_seq=2 ttl=64 time=0.339 ms
+84 bytes from 192.168.1.1 icmp_seq=3 ttl=64 time=0.522 ms
+84 bytes from 192.168.1.1 icmp_seq=4 ttl=64 time=0.392 ms
+84 bytes from 192.168.1.1 icmp_seq=5 ttl=64 time=0.502 ms
+

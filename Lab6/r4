@@ -1,0 +1,25 @@
+R4#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R4(config)#inter f0/0
+R4(config-if)#ip address 10.0.0.2 255.0.0.0
+R4(config-if)#no shutdown
+R4(config-if)#
+*Mar  1 00:13:01.655: %LINK-3-UPDOWN: Interface FastEthernet0/0, changed state to up
+*Mar  1 00:13:02.655: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/0, changed state to up
+R4(config-if)#exit
+R4(config)#inter f0/1                   
+R4(config-if)#ip address 40.0.0.1 255.0.0.0
+R4(config-if)#no shutdown                  
+R4(config-if)#                      
+*Mar  1 00:13:42.351: %LINK-3-UPDOWN: Interface FastEthernet0/1, changed state to up
+*Mar  1 00:13:43.351: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to up
+R4(config-if)#exit                         
+R4(config)#inter f2/0                   
+R4(config-if)#ip address 192.168.1.254 255.255.255.0
+R4(config-if)#no shutdown                           
+R4(config-if)#
+*Mar  1 00:14:54.919: %LINK-3-UPDOWN: Interface FastEthernet2/0, changed state to up
+*Mar  1 00:14:55.919: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet2/0, changed state to up
+R4(config-if)#exit                                  
+R4(config)#exit
+
