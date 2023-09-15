@@ -1,0 +1,40 @@
+R1#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#interface f0/1
+R1(config-if)#ip 10.10.10.1 255.255.255.0
+                 ^
+% Invalid input detected at '^' marker.
+
+R1(config-if)#ip address 10.10.10.1 255.255.255.0
+R1(config-if)#no shut                            
+R1(config-if)#do wr                              
+Building configuration...
+[OK]
+R1(config-if)#end                                
+R1#
+*Mar  1 00:11:12.663: %SYS-5-CONFIG_I: Configured from console by console
+R1(config)#interface f0/0                     
+R1(config-if)#ip address 20.10.10.2 255.255.255.0
+R1(config-if)#no shut
+R1(config-if)#
+*Mar  1 00:11:58.115: %LINK-3-UPDOWN: Interface FastEthernet0/0, changed state to up
+*Mar  1 00:11:59.115: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/0, changed state to up
+R1(config-if)#do wr
+Building configuration...
+[OK]
+R1(config-if)#end
+R1#
+*Mar  1 00:12:07.199: %SYS-5-CONFIG_I: Configured from console by console
+R1#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#ip route 0.0.0.0 0.0.0.0 10.10.10.2         
+R1(config)#end
+R1#
+*Mar  1 00:58:04.287: %SYS-5-CONFIG_I: Configured from console by console
+R1#config t     
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#ip domain lookup 
+R1(config)#ip name-server 10.10.10.2
+R1(config)#end
+R1#
+*Mar  1 01:08:13.595: %SYS-5-CONFIG_I: Configured from console by console

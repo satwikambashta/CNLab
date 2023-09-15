@@ -1,0 +1,24 @@
+PC1> ip 20.10.10.1 255.255.255.0 20.10.10.2
+Checking for duplicate address...
+PC1 : 20.10.10.1 255.255.255.0 20.10.10.2
+ 
+PC1> ping 10.10.10.2                       
+
+10.10.10.2 icmp_seq=1 timeout
+84 bytes from 10.10.10.2 icmp_seq=2 ttl=254 time=24.195 ms
+84 bytes from 10.10.10.2 icmp_seq=3 ttl=254 time=22.040 ms
+84 bytes from 10.10.10.2 icmp_seq=4 ttl=254 time=22.601 ms
+84 bytes from 10.10.10.2 icmp_seq=5 ttl=254 time=22.044 ms
+
+
+PC1> ip dns 10.10.10.2
+
+PC1> ping server.R2.com
+server.R2.com resolved to 10.10.10.2
+
+84 bytes from 10.10.10.2 icmp_seq=1 ttl=254 time=29.305 ms
+84 bytes from 10.10.10.2 icmp_seq=2 ttl=254 time=21.568 ms
+84 bytes from 10.10.10.2 icmp_seq=3 ttl=254 time=22.791 ms
+84 bytes from 10.10.10.2 icmp_seq=4 ttl=254 time=10.937 ms
+84 bytes from 10.10.10.2 icmp_seq=5 ttl=254 time=21.410 ms
+
