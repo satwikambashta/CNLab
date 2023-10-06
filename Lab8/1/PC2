@@ -1,0 +1,17 @@
+PC2> dhcp   
+DORA IP 192.168.3.3/24 GW 192.168.3.1
+
+PC2> show ip
+
+NAME        : PC2[1]
+IP/MASK     : 192.168.3.3/24
+GATEWAY     : 192.168.3.1
+DNS         : 
+DHCP SERVER : 192.168.3.1
+DHCP LEASE  : 86398, 86400/43200/75600
+MAC         : 00:50:79:66:68:01
+LPORT       : 10010
+RHOST:PORT  : 127.0.0.1:10011
+MTU         : 1500
+
+

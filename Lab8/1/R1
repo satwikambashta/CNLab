@@ -1,0 +1,14 @@
+R1#config t
+
+R1(config)#ip dhcp pool NAME
+R1(dhcp-config)#network 192.168.3.0 255.255.255.0
+R1(dhcp-config)#default-router 192.168.3.1
+
+
+R1(dhcp-config)#exit
+R1(config)#interface f0/0 
+R1(config-if)#ip address 192.168.3.1 255.255.255.0
+R1(config-if)#no shutdown
+R1(config-if)#exit
+R1(config)#
+

@@ -1,0 +1,26 @@
+R1#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#interface f0/0
+R1(config-if)#ip address 10.0.0.1 255.255.255.0
+R1(config-if)#no shut
+R1(config-if)#exit
+
+R1(config)#interface f0/1                   
+R1(config-if)#ip address 20.0.0.1 255.255.255.0
+R1(config-if)#no shut                          
+R1(config-if)#exit   
+
+                          
+
+R1(config)#ip dhcp pool NAME                
+R1(dhcp-config)#network 10.0.0.0 255.255.255.0   
+R1(dhcp-config)#default-router 10.0.0.1          
+R1(dhcp-config)#end
+
+
+R1#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#ip dhcp pool NAME1            
+R1(dhcp-config)#network 20.0.0.0 255.255.255.0
+R1(dhcp-config)#default-router 20.0.0.1       
+
