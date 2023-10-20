@@ -1,0 +1,36 @@
+Oct 20 03:57:13.615 HYPERVISOR: Release 0.2.23-amd64/Linux (tag 2023010200)
+Oct 20 03:57:13.615 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 46901.
+Oct 20 03:57:13.621 HYPERVISOR: exec_cmd: hypervisor version 
+Oct 20 03:57:13.622 HYPERVISOR: exec_cmd: hypervisor working_dir /home/student/GNS3/projects/Lab11NAT/project-files/dynamips 
+Oct 20 03:57:13.622 GENERAL: working_dir=/home/student/GNS3/projects/Lab11NAT/project-files/dynamips
+Oct 20 03:57:13.622 HYPERVISOR: exec_cmd: hypervisor working_dir /home/student/GNS3/projects/Lab11NAT/project-files/dynamips/139ed142-7f2f-4898-a0c0-c7e376f624a1 
+Oct 20 03:57:13.622 GENERAL: working_dir=/home/student/GNS3/projects/Lab11NAT/project-files/dynamips/139ed142-7f2f-4898-a0c0-c7e376f624a1
+Oct 20 03:57:13.623 HYPERVISOR: exec_cmd: vm create R2 2 c3745 
+Oct 20 03:57:13.623 VM: VM R2 created.
+Oct 20 03:57:13.624 HYPERVISOR: exec_cmd: vm set_con_tcp_port R2 5001 
+Oct 20 03:57:13.624 HYPERVISOR: exec_cmd: c3745 get_mac_addr R2 
+Oct 20 03:57:13.625 HYPERVISOR: exec_cmd: vm set_ios R2 /home/student/GNS3/images/IOS/c3745-advipservicesk9-mz.124-25d.image 
+Oct 20 03:57:13.626 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 20 03:57:13.626 HYPERVISOR: exec_cmd: vm set_idle_pc R2 0x60a80f7c 
+Oct 20 03:57:13.627 HYPERVISOR: exec_cmd: vm set_ram R2 256 
+Oct 20 03:57:13.627 HYPERVISOR: exec_cmd: vm set_nvram R2 256 
+Oct 20 03:57:13.628 HYPERVISOR: exec_cmd: vm set_disk0 R2 0 
+Oct 20 03:57:13.629 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 20 03:57:13.629 HYPERVISOR: exec_cmd: vm slot_add_binding R2 1 0 NM-1FE-TX 
+Oct 20 03:57:13.629 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 20 03:57:13.630 HYPERVISOR: exec_cmd: vm slot_add_binding R2 2 0 NM-4T 
+Oct 20 03:57:13.630 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 20 03:57:13.631 HYPERVISOR: exec_cmd: vm slot_add_binding R2 3 0 NM-16ESW 
+Oct 20 03:57:13.744 HYPERVISOR: exec_cmd: vm set_ios R2 /home/student/GNS3/images/IOS/c3745-advipservicesk9-mz.124-25d.image 
+Oct 20 03:57:23.009 HYPERVISOR: exec_cmd: nio create_udp udp-be09d2fc-e0e3-43f2-b237-883e89894bb3 10004 127.0.0.1 10005 
+Oct 20 03:57:23.225 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R2 0 0 udp-be09d2fc-e0e3-43f2-b237-883e89894bb3 
+Oct 20 03:57:23.226 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 20 03:57:28.245 HYPERVISOR: exec_cmd: vm set_ghost_status R2 2 
+Oct 20 03:57:28.246 HYPERVISOR: exec_cmd: vm set_ghost_file R2 /home/student/GNS3/projects/Lab11NAT/project-files/dynamips/c3745-advipservicesk9-mz.124-25d.image-256.ghost 
+Oct 20 03:57:28.247 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 20 03:57:28.248 HYPERVISOR: exec_cmd: vm set_config R2 configs/i2_startup-config.cfg 
+Oct 20 03:57:28.248 HYPERVISOR: exec_cmd: vm start R2 
+Oct 20 04:16:32.212 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 20 04:16:32.212 HYPERVISOR: exec_cmd: vm stop R2 
+Oct 20 04:16:32.340 VM: VM R2 shutdown.
+Oct 20 04:16:32.341 HYPERVISOR: exec_cmd: vm extract_config R2 
